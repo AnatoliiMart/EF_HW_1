@@ -111,6 +111,23 @@ namespace EF_HW_1
         }
 
         public Book GetOneBook() => listBox1.SelectedItem as Book;
-        
+
+        private void btn_DeleteBook_Click(object sender, EventArgs e)
+        {
+            using (_context = new MyDbContext())
+            {
+                Book book = GetOneBook();
+                foreach (var item in _context.Books)
+                {
+                    if (item.Id == book.Id)
+                    {
+                        _context.Books.Remove(item);
+                        break;
+                    }
+                }
+                _context.SaveChanges();
+                listBox1.DataSource = _context.Books.ToList();
+            }
+        }
     }
 }

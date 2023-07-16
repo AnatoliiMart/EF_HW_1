@@ -123,6 +123,7 @@
             this.btn_DeleteBook.TabIndex = 3;
             this.btn_DeleteBook.Text = "Удалить";
             this.btn_DeleteBook.UseVisualStyleBackColor = false;
+            this.btn_DeleteBook.Click += new System.EventHandler(this.btn_DeleteBook_Click);
             // 
             // btn_UpdateBook
             // 

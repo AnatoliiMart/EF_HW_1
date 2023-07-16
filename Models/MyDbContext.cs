@@ -20,19 +20,6 @@ namespace EF_HW_1.Models
             SaveChanges();
         }
 
-        public void RemoveBook(string name) 
-        {
-            var res = from book in Books
-                      where book.Name == name
-                      select book;
-            foreach (var book in res) 
-            {
-                Books.Remove(book);
-                break;
-            }
-            SaveChanges();
-        }
-
         public List<Book> SearchByAuthor(string authorName)
         {
             var res = from b in Books

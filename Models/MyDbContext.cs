@@ -64,9 +64,5 @@ namespace EF_HW_1.Models
                       select b;
             return res.ToList();
         }
-
-        public void UpdateBook(string name) 
-        {
-        }
     }
 }
